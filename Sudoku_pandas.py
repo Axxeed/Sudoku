@@ -19,6 +19,7 @@ def check_line(grid_sudoku):
             return False
     return True 
 
+
 def check_square(grid_sudoku):
     square = []
     for i in range(0,9,3):
