@@ -19,6 +19,22 @@ def check_line(grid_sudoku):
             return False
     return True 
 
+
+def check_square(grid_sudoku):
+    square = []
+    for i in range(0,9,3):
+        for j in range(0,9,3):
+            for x in range(i,i+3):
+                for y in range(j,j+3):
+                    first = grid_sudoku[x][y]
+                    square.append(first)
+            if isunique(square) == True:
+                square = []
+            else:
+                print(square)
+                return False
+    return True
+
 def check_sudoku(grid_sudoku):
     if check_line(grid_sudoku):
         if check_columns(grid_sudoku):
